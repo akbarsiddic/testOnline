@@ -17,6 +17,11 @@ class PegawaiController extends Controller
         ->join('table__t__kelurahan', 'table__t__pegawai.kelurahan_id', '=', 'table__t__kelurahan.id')
         ->select('table__t__pegawai.*', 'table__t__provinsi.nama_provinsi', 'table__t__kecamatan.nama_kecamatan', 'table__t__kelurahan.nama_kelurahan')
         ->get();
+
+        $provinsi = DB::table('table__t__provinsi')->get();
+        $kecamatan = DB::table('table__t__kecamatan')->get();
+        $kelurahan = DB::table('table__t__kelurahan')->get();
+        
         return view('pegawai', compact('pegawai'));
     }
 

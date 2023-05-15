@@ -50,10 +50,9 @@
                         <div class="mb-3">
                             <label for="kelurahan_id" class="form-label">Kelurahan</label>
                             <select class="form-select" id="kelurahan_id" name="kelurahan_id" required>
-                                <option value="">Pilih Kelurahan</option>
-                                <option value="1">Ujung Menteng</option>
-                                <option value="2">Delambang</option>
-                                <option value="3">Tipar</option>
+                                @foreach($kelurahan as $Get)
+                                <option value="{{$Get->id}}">{{$Get->nama_kelurahan}}</option>
+                                @endforeach
 
                             </select>
                         </div>
@@ -61,9 +60,9 @@
                             <label for="kecamatan_id" class="form-label">Kecamatan</label>
                             <select class="form-select" id="kecamatan_id" name="kecamatan_id" required>
                                 <option value="">Pilih Kecamatan</option>
-                                <option value="1">Cakung Barat</option>
-                                <option value="2">Cakung Timur</option>
-                                <option value="3">Pasir Panjang</option>
+                                @foreach($kecamatan as $Get)
+                                <option value="{{$Get->id}}">{{$Get->nama_kecamatan}}</option>
+                                @endforeach
 
                             </select>
                         </div>
@@ -71,9 +70,9 @@
                             <label for="provinsi_id" class="form-label">Kecamatan</label>
                             <select class="form-select" id="provinsi_id" name="provinsi_id" required>
                                 <option value="">Pilih Provinsi</option>
-                                <option value="1">Aceh</option>
-                                <option value="2">DKI Jakarta</option>
-                                <option value="3">Bali</option>
+                                @foreach($provinsi as $Get)
+                                <option value="{{$Get->id}}">{{$Get->nama_provinsi}}</option>
+                                @endforeach
 
                             </select>
                         </div>
